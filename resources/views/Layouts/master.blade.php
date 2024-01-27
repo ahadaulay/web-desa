@@ -69,7 +69,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
-              <a href="/beranda" class="nav-item nav-link active">Beranda</a>
+              <a href="/" class="nav-item nav-link active">Beranda</a>
               <div class="nav-item dropdown">
                 <a
                   href="#"
@@ -90,9 +90,10 @@
                   >
                 </div>
               </div>
-              <a href="/berita" class="nav-item nav-link">Berita</a>
+              <a href="/beritas" class="nav-item nav-link">Berita</a>
               <a href="/galeri" class="nav-item nav-link">Galeri</a>
               <a href="/kontak" class="nav-item nav-link">Kontak</a>
+              <butaton type="button" class="nav-item nav-link btn text-success ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
             </div>
           </div>
         </nav>
@@ -177,6 +178,24 @@
         ><i class="bi bi-arrow-up"></i
       ></a>
     </div>
+            <!-- Full Screen Search Start -->
+            <div class="modal fade" id="searchModal" tabindex="-1">
+              <div class="modal-dialog modal-fullscreen">
+                  <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                      <div class="modal-header border-0">
+                          <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body d-flex align-items-center justify-content-center">
+                          <form action="/pencarian" method="GET" class="input-group" style="max-width: 600px;">
+                            @csrf
+                              <input type="text" name="keyword" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                              <button type="submit" class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Full Screen Search End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

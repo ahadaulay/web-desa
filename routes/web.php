@@ -9,6 +9,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PejabatController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\DetailSyaratController;
+use App\Http\Controllers\PersyaratanDokumenController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -84,6 +86,21 @@ Route::post('/admin/berita/store',[BeritaController::class,'store']);
 Route::get('/admin/berita/{id}/edit',[BeritaController::class,'edit']);
 Route::put('/admin/berita/{id}',[BeritaController::class,'update']);
 Route::delete('/admin/berita/{id}/destroy',[BeritaController::class,'destroy']);
+
+Route::get('/admin/persyaratan_dokumen',[PersyaratanDokumenController::class,'get']);
+Route::get('/admin/persyaratan_dokumen/create',[PersyaratanDokumenController::class,'create']);
+Route::post('/admin/persyaratan_dokumen/store',[PersyaratanDokumenController::class,'store']);
+Route::get('/admin/persyaratan_dokumen/{id}/edit',[PersyaratanDokumenController::class,'edit']);
+Route::put('/admin/persyaratan_dokumen/{id}',[PersyaratanDokumenController::class,'update']);
+Route::delete('/admin/persyaratan_dokumen/{id}/destroy',[PersyaratanDokumenController::class,'destroy']);
+
+Route::get('/admin/detail_syarat/{id}',[DetailSyaratController::class,'get']);
+Route::get('/admin/detail_syarat/create/{id}',[DetailSyaratController::class,'create']);
+Route::post('/admin/detail_syarat/store/{id}',[DetailSyaratController::class,'store']);
+Route::get('/admin/detail_syarat/{id}/edit',[DetailSyaratController::class,'edit']);
+Route::put('/admin/detail_syarat/{id}',[DetailSyaratController::class,'update']);
+Route::delete('/admin/detail_syarat/{id}/destroy/{persyaratan_dokumen_id}',[DetailSyaratController::class,'destroy']);
+
 
 
 

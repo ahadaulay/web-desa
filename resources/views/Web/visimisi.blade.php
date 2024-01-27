@@ -7,7 +7,7 @@
       <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
         <div class="col-md-12 p-5 mt-lg-5">
           <div class="pt-lg-4" >
-          <h1 class="mt-lg-5">VISI & MISI LEPTEN</h1>
+          <h1 class="mt-lg-5">VISI & MISI DESA DELISAOS</h1>
           <h3 class="mt-lg-5">VISI</h3>
           <ol>
             <li>Mantap</li>

@@ -1,10 +1,11 @@
 @extends('Layouts.master')
 
 @section('content')
-<div class="container-xxl bg-white p-0">
-    <!-- Property List Start -->
-    <div class="container-xxl py-5">
-      <div class="container">
+
+<div class="container-fluid header bg-white p-0">
+  <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+    <div class="col-md-12 p-5 mt-lg-5 md-lg-5">
+      <div class="container" style="margin-top: 100px">
         <div class="row g-0 gx-5 align-items-end">
           <div class="col-lg-6">
             <div
@@ -57,12 +58,9 @@
         </div>
       </div>
     </div>
-    <!-- Property List End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
   </div>
+</div>
+
+
+
 @endsection

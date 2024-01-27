@@ -96,36 +96,48 @@
               </a>
             </li>
 
-            @if (session()->get('role') == "admin")
-            <li class="menu-item ">
-              <a href="/registerIndex" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-plus-circle"></i>
-                <div data-i18n="Analytics">Register Akun</div>
-              </a>
-            </li>
-            @endif
-
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item ">
-              <a href="/heros" class="menu-link">
+              <a href="/admin/heros" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crosshair"></i>
                 <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/layanan" class="menu-link">
+              <a href="/admin/layanan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Layanan</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/pejabat" class="menu-link">
+              <a href="/admin/pejabat" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-bar-chart"></i>
                 <div data-i18n="Analytics">Pejabat</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/pengumuman" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <div data-i18n="Analytics">Pengumuman</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/berita" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <div data-i18n="Analytics">Berita</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/persyaratan_dokumen" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <div data-i18n="Analytics">Persyaratan Dokumen</div>
               </a>
             </li>
 
