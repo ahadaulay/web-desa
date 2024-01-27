@@ -10,6 +10,8 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PejabatController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\DetailSyaratController;
+use App\Http\Controllers\DokumenPendukungController;
+use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\PersyaratanDokumenController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -36,9 +38,13 @@ Route::get('/visi-misi', [WebController::class, 'visimisi']);
 Route::get('/tugas-fungsi', [WebController::class, 'tugasfungsi']);
 Route::get('/struktur-pejabat', [WebController::class, 'strukturpejabat']);
 Route::get('/beritas', [WebController::class, 'berita']);
-Route::get('/berita-detail', [WebController::class, 'detailberita']);
+Route::get('/   ', [WebController::class, 'detailberita']);
 Route::get('/galeri', [WebController::class, 'galeri']);
 Route::get('/kontak', [WebController::class, 'kontak']);
+Route::get('/hasilpencarian', [WebController::class, 'hasilpencarian']);
+
+Route::post('/pencarian', [PencarianController::class, 'pencarian']);
+Route::get('/detailpencarian/{id}', [PencarianController::class, 'detailpencarian']);
 
 
 
@@ -101,6 +107,11 @@ Route::get('/admin/detail_syarat/{id}/edit',[DetailSyaratController::class,'edit
 Route::put('/admin/detail_syarat/{id}',[DetailSyaratController::class,'update']);
 Route::delete('/admin/detail_syarat/{id}/destroy/{persyaratan_dokumen_id}',[DetailSyaratController::class,'destroy']);
 
-
+Route::get('/admin/dokumen_pendukung/{id}',[DokumenPendukungController::class,'get']);
+Route::get('/admin/dokumen_pendukung/create/{id}',[DokumenPendukungController::class,'create']);
+Route::post('/admin/dokumen_pendukung/store/{id}',[DokumenPendukungController::class,'store']);
+Route::get('/admin/dokumen_pendukung/{id}/edit',[DokumenPendukungController::class,'edit']);
+Route::put('/admin/dokumen_pendukung/{id}',[DokumenPendukungController::class,'update']);
+Route::delete('/admin/dokumen_pendukung/{id}/destroy/{persyaratan_dokumen_id}',[DokumenPendukungController::class,'destroy']);
 
 

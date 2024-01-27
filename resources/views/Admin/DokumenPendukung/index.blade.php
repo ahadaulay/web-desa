@@ -34,19 +34,19 @@
 </div>
 @endif
 
-<h1>PERSYARATAN DOKUMEN</h1>
+<h1>Dokumen Pendukung {{$data->nama}} </h1>
 
 <!-- Hoverable rows start -->
 <div class="row" id="table-hover-row">
     <div class="col-12">
       <div class="card">
         <div class="card-header bg-primary">
-          <h4 class="card-title text-white ">PERSYARATAN DOKUMEN</h4>
+          <h4 class="card-title text-white ">DOKUMEN PENDUKUNG</h4>
         </div>
         <div class="card-content">
           <div class="card-body">
-            <a href="/admin/persyaratan_dokumen/create">
-              <button type="button" class="btn btn-primary m-3 ml-3" >Tambah Dokumen</button>
+            <a href="/admin/dokumen_pendukung/create/{{$data->id}}">
+              <button type="button" class="btn btn-primary m-3 ml-3" >Tambah dokumen</button>
             </a>  
           </div>
           <!-- table hover -->
@@ -55,8 +55,7 @@
               <thead>
                 <tr>
                   <th>NO</th>
-                  <th>Singkatan</th>
-                  <th>Nama</th>
+                  <th>Dokumen</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -65,25 +64,17 @@
                 $no = 1;
                 @endphp
 
-                @foreach($data as $w)
+                @foreach($persyaratan as $w)
                 <tr>
                   <td>{{$no}}</td>
-                  <td>{{$w->singkatan}}</td>
-                  <td>{{$w->nama}}</td>
+                  <td>{{$w->dokumen}}</td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                      <a href="/admin/detail_syarat/{{$w->id}}">
-                        <button type="button" class="btn btn-success m-3" >SYARAT</button>
-                      </a>
-
-                      <a href="/admin/dokumen_pendukung/{{$w->id}}">
-                        <button type="button" class="btn btn-primary m-3" >DOKUMEN</button>
-                      </a>
-                        <a href="/admin/persyaratan_dokumen/{{$w->id}}/edit">
+                        <a href="/admin/dokumen_pendukung/{{$w->id}}/edit">
                           <button type="button" class="btn btn-warning m-3" >EDIT</button>
                         </a>
 
-                        <form action="/admin/persyaratan_dokumen/{{$w->id}}/destroy" method="POST">
+                        <form action="/admin/dokumen_pendukung/{{$w->id}}/destroy/{{$data->id}}" method="POST">
                           @csrf
                           @method('delete')
                           <button type="sumbit"  value="Delete" class="btn btn-danger m-3">HAPUS</button>

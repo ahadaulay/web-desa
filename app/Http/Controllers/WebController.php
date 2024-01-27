@@ -69,4 +69,9 @@ class WebController extends BaseController
     {
         return view('Web.kontak');
     }
+
+    public function hasilpencarian()
+    {
+        return view('Web.hasilpencarian');
+    }
 }
