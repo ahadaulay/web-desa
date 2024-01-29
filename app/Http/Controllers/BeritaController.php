@@ -22,7 +22,7 @@ class BeritaController extends BaseController
             return redirect("/loginIndex")->with("failed", "gagal login");
         }
 
-        $data = Berita::all();
+        $data = Berita::latest()->get();
 
 
         return view('Admin.Berita.index',compact(['data']));

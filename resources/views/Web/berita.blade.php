@@ -30,7 +30,7 @@
               >
                 <div class="property-item rounded overflow-hidden">
                   <div class="position-relative overflow-hidden">
-                    <a href="/berita-detail"
+                    <a href="/beritas/{{$w->id}}"
                       ><img style="object-fit: cover;"  width="300px" height="170px" src="{{$w->gambar}}" alt=""
                     /></a>
                     <div
@@ -40,7 +40,7 @@
                     </div>
                   </div>
                   <div class="p-4 pb-0">
-                    <a class="d-block h5 mb-2" href="/berita-detail"
+                    <a class="d-block h5 mb-2" href="/beritas/{{$w->id}}"
                       >{{$w->judul}}</a
                     >
                     <p>

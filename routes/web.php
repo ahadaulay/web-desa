@@ -8,10 +8,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PejabatController;
+use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\PencarianController;
+use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\DetailSyaratController;
 use App\Http\Controllers\DokumenPendukungController;
-use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\PersyaratanDokumenController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -38,13 +40,18 @@ Route::get('/visi-misi', [WebController::class, 'visimisi']);
 Route::get('/tugas-fungsi', [WebController::class, 'tugasfungsi']);
 Route::get('/struktur-pejabat', [WebController::class, 'strukturpejabat']);
 Route::get('/beritas', [WebController::class, 'berita']);
-Route::get('/   ', [WebController::class, 'detailberita']);
+Route::get('/beritas/{id}', [WebController::class, 'beritadetail']);
 Route::get('/galeri', [WebController::class, 'galeri']);
 Route::get('/kontak', [WebController::class, 'kontak']);
 Route::get('/hasilpencarian', [WebController::class, 'hasilpencarian']);
 
 Route::post('/pencarian', [PencarianController::class, 'pencarian']);
 Route::get('/detailpencarian/{id}', [PencarianController::class, 'detailpencarian']);
+
+Route::get('/data-profesi', [StatistikController::class, 'profesi']);
+Route::get('/data-pendidikan', [StatistikController::class, 'pendidikan']);
+Route::get('/data-agama', [StatistikController::class, 'agama']);
+Route::get('/data-gender', [StatistikController::class, 'gender']);
 
 
 
@@ -113,5 +120,13 @@ Route::post('/admin/dokumen_pendukung/store/{id}',[DokumenPendukungController::c
 Route::get('/admin/dokumen_pendukung/{id}/edit',[DokumenPendukungController::class,'edit']);
 Route::put('/admin/dokumen_pendukung/{id}',[DokumenPendukungController::class,'update']);
 Route::delete('/admin/dokumen_pendukung/{id}/destroy/{persyaratan_dokumen_id}',[DokumenPendukungController::class,'destroy']);
+
+Route::get('/admin/penduduk',[PendudukController::class,'get']);
+Route::get('/admin/penduduk/create',[PendudukController::class,'create']);
+Route::post('/admin/penduduk/store',[PendudukController::class,'store']);
+Route::get('/admin/penduduk/{id}/edit',[PendudukController::class,'edit']);
+Route::put('/admin/penduduk/{id}',[PendudukController::class,'update']);
+Route::delete('/admin/penduduk/{id}/destroy',[PendudukController::class,'destroy']);
+
 
 

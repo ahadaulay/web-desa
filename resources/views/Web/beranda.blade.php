@@ -119,7 +119,7 @@
             >
               <h1 class="mb-3">Berita</h1>
               <p>
-                Berita seputar LEPTEN dan kegiatan akademisi dan pelatihan
+                Berita seputar Desa DELISAOS
               </p>
             </div>
           </div>
@@ -127,6 +127,7 @@
         <div class="tab-content">
           <div id="tab-1" class="tab-pane fade show p-0 active">
             <div class="row g-4">
+              @foreach ($berita as $w)
               {{-- card start --}}
               <div
                 class="col-lg-4 col-md-6 wow fadeInUp"
@@ -134,35 +135,36 @@
               >
                 <div class="property-item rounded overflow-hidden">
                   <div class="position-relative overflow-hidden">
-                    <a href=""
-                      ><img class="img-fluid" style="object-fit: cover;" src="{{asset('lepten')}}/img/berita1.jpg" alt=""
+                    <a href="/beritas/{{$w->id}}"
+                      ><img style="object-fit: cover;"  width="300px" height="170px" src="{{$w->gambar}}" alt=""
                     /></a>
                     <div
                       class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"
                     >
-                      Pengabdian
+                    {{$w->kategori}}
                     </div>
                   </div>
                   <div class="p-4 pb-0">
-                    <a class="d-block h5 mb-2" href=""
-                      >Pengabdian Dosen Prodi sistem Informasi Universitas Malikussaleh</a
+                    <a class="d-block h5 mb-2" href="/beritas/{{$w->id}}"
+                      >{{$w->judul}}</a
                     >
                     <p>
                       <i class="text-primary me-2"></i
-                      >12 November 2023
+                      >{{ \Carbon\Carbon::parse($w->tanggal)->isoFormat('DD MMMM YYYY', 'Do MMMM YYYY') }}  
                     </p>
                   </div>
                 </div>
                 
               </div>
               {{-- card end --}}
+              @endforeach
 
               
               <div
                 class="col-12 text-center wow fadeInUp"
                 data-wow-delay="0.1s"
               >
-                <a class="btn btn-primary py-3 px-5" href="/berita"
+                <a class="btn btn-primary py-3 px-5" href="/beritas"
                   >Berita Lainnya</a
                 >
               </div>

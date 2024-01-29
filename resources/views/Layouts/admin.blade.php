@@ -55,6 +55,8 @@
 
     <link rel="stylesheet" href="{{asset('sneat')}}/assets/vendor/libs/apex-charts/apex-charts.css" />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -141,6 +143,13 @@
               </a>
             </li>
 
+            <li class="menu-item ">
+              <a href="/admin/penduduk" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <div data-i18n="Analytics">Penduduk</div>
+              </a>
+            </li>
+
           </ul>
         </aside>
         <!-- / Menu -->
@@ -214,5 +223,15 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      let table = new DataTable('#myTable', {
+    responsive: true
+});
+    </script>
   </body>
 </html>

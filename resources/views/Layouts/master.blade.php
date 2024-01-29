@@ -99,8 +99,29 @@
                 </div>
               </div>
               <a href="/beritas" class="nav-item nav-link {{ request()->is('beritas') ? 'active' : '' }}">Berita</a>
-              <a href="/galeri" class="nav-item nav-link {{ request()->is('galeri') ? 'active' : '' }}">Galeri</a>
-              <a href="/kontak" class="nav-item nav-link {{ request()->is('kontak') ? 'active' : '' }}">Kontak</a>
+              <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle {{ request()->is(['data-pendidikan', 'data-profesi', 'data-agama', 'data-gender']) ? 'active' : '' }}"
+                  data-bs-toggle="dropdown"
+                  >Statistik</a
+                >
+                <div class="dropdown-menu rounded-0 m-0">
+                  <a href="/data-pendidikan" class="dropdown-item"
+                    >Data Pendidikan</a
+                  >
+                  <a href="/data-profesi" class="dropdown-item"
+                    >Data Profesi</a
+                  >
+                  <a href="/data-agama" class="dropdown-item"
+                    >Data Agama</a
+                  >
+                  <a href="/data-gender" class="dropdown-item"
+                  >Data Gender</a
+                >
+                </div>
+              </div>
+              <a href="/galeri" class="nav-item nav-link {{ request()->is('galeri') ? 'active' : '' }}">WISATA</a>
               <button type="button" class="nav-item nav-link btn text-success ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             </div>
           </div>

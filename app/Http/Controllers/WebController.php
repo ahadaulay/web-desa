@@ -22,9 +22,11 @@ class WebController extends BaseController
         $layanan = Layanan::all();
         $pejabat = Pejabat::all();
         $pengumuman = Pengumuman::all();
+        $berita = Berita::latest()->limit(6)->get();
 
 
-        return view('Web.beranda',compact(['beranda','layanan','pejabat','pengumuman']));
+
+        return view('Web.beranda',compact(['beranda','layanan','pejabat','pengumuman','berita']));
     }
 
     public function profile()
@@ -54,9 +56,12 @@ class WebController extends BaseController
         return view('Web.berita',compact(['berita']));
     }
 
-    public function detailberita()
+    public function beritadetail($id)
     {
-        return view('Web.detailberita');
+        $berita = Berita::where("id", $id)->first();
+        
+
+        return view('Web.detailberita',compact(['berita']));
     }
 
     public function galeri()
