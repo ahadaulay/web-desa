@@ -41,7 +41,8 @@ Route::get('/tugas-fungsi', [WebController::class, 'tugasfungsi']);
 Route::get('/struktur-pejabat', [WebController::class, 'strukturpejabat']);
 Route::get('/beritas', [WebController::class, 'berita']);
 Route::get('/beritas/{id}', [WebController::class, 'beritadetail']);
-Route::get('/galeri', [WebController::class, 'galeri']);
+Route::get('/wisata', [WebController::class, 'wisata']);
+Route::get('/wisatadetail', [WebController::class, 'detailwisata']);
 Route::get('/kontak', [WebController::class, 'kontak']);
 Route::get('/hasilpencarian', [WebController::class, 'hasilpencarian']);
 
@@ -65,7 +66,7 @@ Route::get('/hero/{id}/edit',[HeroController::class,'edit']);
 Route::put('/hero/{id}',[HeroController::class,'update']);
 Route::delete('/hero/{id}/destroy',[HeroController::class,'destroy']);
 
-Route::get('/layanan',[LayananController::class,'get']);
+Route::get('/layanans',[LayananController::class,'get']);
 Route::get('/layanan/create',[LayananController::class,'create']);
 Route::post('/layanan/store',[LayananController::class,'store']);
 Route::get('/layanan/{id}/edit',[LayananController::class,'edit']);

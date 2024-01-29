@@ -12,9 +12,9 @@
               class="text-start mx-auto mb-5 wow slideInLeft"
               data-wow-delay="0.1s"
             >
-              <h1 class="mb-3">GALERI</h1>
+              <h1 class="mb-3">WISATA</h1>
               <p>
-                Dokumentasi seputar Desa dan kegiatan di desa DELISAOS
+                Destinasi Wisata di desa DELISAOS
               </p>
             </div>
           </div>

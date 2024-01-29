@@ -64,9 +64,14 @@ class WebController extends BaseController
         return view('Web.detailberita',compact(['berita']));
     }
 
-    public function galeri()
+    public function wisata()
     {
-        return view('Web.galeri');
+        return view('Web.wisata');
+    }
+
+    public function detailwisata()
+    {
+        return view('Web.detailwisata');
     }
 
 

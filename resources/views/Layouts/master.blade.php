@@ -121,7 +121,7 @@
                 >
                 </div>
               </div>
-              <a href="/galeri" class="nav-item nav-link {{ request()->is('galeri') ? 'active' : '' }}">WISATA</a>
+              <a href="/wisata  " class="nav-item nav-link {{ request()->is('wisata ') ? 'active' : '' }}">WISATA</a>
               <button type="button" class="nav-item nav-link btn text-success ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             </div>
           </div>
@@ -191,9 +191,18 @@
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">
-                  <a href="">Home</a>
-                  <a href="">Help</a>
-                  <a href="">FQAs</a>
+                  <img
+                  class="img-fluid"
+                  src="{{asset('lepten')}}/img/logos.png"
+                  alt="Icon"
+                  style="width: 50px; height: 50px"
+                />
+                <img
+                class="img-fluid"
+                src="{{asset('lepten')}}/img/desbimtek.png"
+                alt="Icon"
+                style="width: 50px; height: 50px"
+              />
                 </div>
               </div>
             </div>
@@ -218,7 +227,7 @@
               <div class="modal-body d-flex align-items-center justify-content-center">
                   <form action="/pencarian" method="POST" class="input-group" style="max-width: 600px;">
                     @csrf
-                      <input type="text" name="keyword" class="form-control text-white bg-transparent border-light p-3" placeholder="Type search keyword">
+                      <input autofocus type="text" name="keyword" class="form-control text-white bg-transparent border-light p-3" placeholder="Type search keyword">
                       <button type="submit" class="btn btn-light px-4"><i class="bi bi-search"></i></button>
                   </form>
               </div>

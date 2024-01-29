@@ -4,7 +4,7 @@
 
 <div class="container-fluid header bg-white p-0">
   <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-    <div class="col-md-12 p-5 mt-lg-5 md-lg-5">
+    <div class="col-md-12 p-5 mt-lg-5 md-lg-5"> 
       <div class="container" style="margin-top: 100px">
         <div class="row g-0 gx-5 align-items-end">
           <div class="col-lg-6">

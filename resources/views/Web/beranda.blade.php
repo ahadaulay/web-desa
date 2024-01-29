@@ -92,7 +92,7 @@
             <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                 <div class="rounded p-4" >
                     <div class="icon mb-3">
-                        <img class="img-fluid" src="{{$w->gambar}}" style="object-fit: cover;" alt="Icon" width="100px" height="100px" />
+                        <img  src="{{$w->gambar}}" style="object-fit: cover;" alt="Icon" width="100px" height="100px" />
                     </div>
                     <h6>{{$w->nama}}</h6>
                     <span>{{$w->deskripsi}}</span>
