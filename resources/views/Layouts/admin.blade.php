@@ -102,51 +102,58 @@
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item ">
-              <a href="/admin/heros" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crosshair"></i>
+              <a href="/heros" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image-alt"></i>
                 <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/admin/layanan" class="menu-link">
+              <a href="/layanans" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Layanan</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/admin/pejabat" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+              <a href="pejabat" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-user"></i>
                 <div data-i18n="Analytics">Pejabat</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/admin/pengumuman" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+              <a href="/pengumuman" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-megaphone"></i>
                 <div data-i18n="Analytics">Pengumuman</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/admin/berita" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+              <a href="/admin/berita" class="menu-link">  
+                <i class="menu-icon tf-icons bx bx-message-alt-dots"></i>
                 <div data-i18n="Analytics">Berita</div>
               </a>
             </li>
 
             <li class="menu-item ">
               <a href="/admin/persyaratan_dokumen" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <i class="menu-icon tf-icons bx bxs-file-doc"></i>
                 <div data-i18n="Analytics">Persyaratan Dokumen</div>
               </a>
             </li>
 
             <li class="menu-item ">
               <a href="/admin/penduduk" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+                <i class="menu-icon tf-icons bx bxs-face"></i>
                 <div data-i18n="Analytics">Penduduk</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/wisata" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-landscape"></i>
+                <div data-i18n="Analytics">Wisata</div>
               </a>
             </li>
 

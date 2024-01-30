@@ -81,28 +81,59 @@ class PendudukController extends BaseController
     }
 
 
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
-        if (session()->get("remember_token") == "") {
-            return redirect("/loginIndex")->with("failed", "gagal login");
+        // Pastikan ada session remember_token (user telah login)
+        if (empty(session()->get("remember_token"))) {
+            return redirect("/loginIndex")->with("failed", "Gagal login");
         }
-
-        $data_penduduk = Penduduk::where("id", $id)->first();
-
-        Penduduk::where("id", $id)->update([
+    
+        // Validasi data input menggunakan Laravel Validation
+        $request->validate([
+            'nama' => 'required|string',
+            'nik' => 'required|numeric',
+            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
+            'tanggal_lahir' => 'required|date',
+            'profesi' => 'required|string',
+            'agama' => 'required|string',
+            'pendidikan' => 'required|string',
+            'perkawinan' => 'required|string',
+            'alamat' => 'required|string',
+        ]);
+    
+        // Cari data penduduk berdasarkan ID
+        $penduduk = Penduduk::find($id);
+    
+        // Jika data tidak ditemukan, kembalikan response dengan pesan error
+        if (!$penduduk) {
+            return redirect('/admin/penduduk')->with("failed", "Data tidak ditemukan");
+        }
+    
+        // Cek apakah profesi sudah ada, jika tidak, tambahkan
+        $profesi = Profesi::firstOrCreate(['profesi' => $request->profesi]);
+    
+        // Cek apakah agama sudah ada, jika tidak, tambahkan
+        $agama = Agama::firstOrCreate(['agama' => $request->agama]);
+    
+        // Cek apakah pendidikan sudah ada, jika tidak, tambahkan
+        $pendidikan = Pendidikan::firstOrCreate(['pendidikan' => $request->pendidikan]);
+    
+        // Update data penduduk
+        $penduduk->update([
             "nama" => $request->nama,
             "nik" => $request->nik,
             "jenis_kelamin" => $request->jenis_kelamin,
             "tanggal_lahir" => $request->tanggal_lahir,
-            "profesi" => $request->profesi,
-            "agama" => $request->agama,
-            "pendidikan" => $request->pendidikan,
+            "profesi_id" => $profesi->id,
+            "agama_id" => $agama->id,
+            "pendidikan_id" => $pendidikan->id,
             "perkawinan" => $request->perkawinan,
             "alamat" => $request->alamat,
         ]);
-
-        return redirect('/admin/penduduk')->with("success_edit", "Berhasil Mengubah Data");
+    
+        return redirect('/admin/penduduk')->with("success_update", "Berhasil Memperbarui Data");
     }
+    
 
     public function destroy($id)
     {

@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div style="height: 1300px" class="container-fluid header bg-white p-0">
+    <div style="height: 2000px" class="container-fluid header bg-white p-0">
       <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
         <div class="col-md-12 p-5 mt-lg-5 md-lg-5">
           <div class="pt-lg-4" >
@@ -38,6 +38,24 @@
             </div>
           </div>
         </div>
+
+        <div class="container-fluid contact py-5">
+          <div class="container py-5 text-center">
+            <h1>LOKASI DESA</h1>
+              <div class="p-5 bg-light rounded">
+                  <div class="row g-4">
+                      <div class="col-lg-12">
+                          <div class="h-100 rounded">
+                              <iframe class="rounded w-100" 
+                              style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508923.96079779783!2d96.66271997636747!3d4.77539975744361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30388c1d8bd63877%3A0xc7c01de53e9c64b6!2sBener%20Meriah%20Regency%2C%20Aceh!5e0!3m2!1sen!2sid!4v1706631799711!5m2!1sen!2sid" 
+                              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
         </div>
       </div>
     </div>

@@ -59,7 +59,7 @@
                                         <label for="profesi">Profesi</label>
                                     </div>
                                     <div class="col-md-8 form-group mb-3">
-                                        <input type="text" id="profesi" class="form-control" name="profesi" value="{{ $data->profesi }}">
+                                        <input type="text" id="profesi_id" class="form-control" name="profesi" value="{{ $data->Profesi->profesi }}">
                                     </div>
                         
                                     <!-- Tambahkan Kolom Agama -->
@@ -67,7 +67,7 @@
                                         <label for="agama">Agama</label>
                                     </div>
                                     <div class="col-md-8 form-group mb-3">
-                                        <input type="text" id="agama" class="form-control" name="agama" value="{{ $data->agama }}">
+                                        <input type="text" id="agama_id" class="form-control" name="agama" value="{{ $data->Agama->agama }}">
                                     </div>
                         
                                     <!-- Tambahkan Kolom Pendidikan -->
@@ -75,7 +75,7 @@
                                         <label for="pendidikan">Pendidikan</label>
                                     </div>
                                     <div class="col-md-8 form-group mb-3">
-                                        <input type="text" id="pendidikan" class="form-control" name="pendidikan" value="{{ $data->pendidikan }}">
+                                        <input type="text" id="pendidikan_id" class="form-control" name="pendidikan" value="{{ $data->Pendidikan->pendidikan }}">
                                     </div>
                         
                                     <!-- Tambahkan Kolom Perkawinan -->

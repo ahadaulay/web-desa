@@ -121,7 +121,7 @@
                 >
                 </div>
               </div>
-              <a href="/wisata  " class="nav-item nav-link {{ request()->is('wisata ') ? 'active' : '' }}">WISATA</a>
+              <a href="/wisatas  " class="nav-item nav-link {{ request()->is('wisata ') ? 'active' : '' }}">WISATA</a>
               <button type="button" class="nav-item nav-link btn text-success ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             </div>
           </div>

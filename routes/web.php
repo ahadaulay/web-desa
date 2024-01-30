@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\WisataController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PejabatController;
 use App\Http\Controllers\PendudukController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\DetailSyaratController;
 use App\Http\Controllers\DokumenPendukungController;
+use App\Http\Controllers\GambarWisataController;
 use App\Http\Controllers\PersyaratanDokumenController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -40,9 +42,11 @@ Route::get('/visi-misi', [WebController::class, 'visimisi']);
 Route::get('/tugas-fungsi', [WebController::class, 'tugasfungsi']);
 Route::get('/struktur-pejabat', [WebController::class, 'strukturpejabat']);
 Route::get('/beritas', [WebController::class, 'berita']);
-Route::get('/beritas/{id}', [WebController::class, 'beritadetail']);
-Route::get('/wisata', [WebController::class, 'wisata']);
-Route::get('/wisatadetail', [WebController::class, 'detailwisata']);
+Route::get('/beritas/{slug}', [WebController::class, 'beritadetail']);
+
+Route::get('/wisatas', [WebController::class, 'wisata']);
+Route::get('/wisata-detail/{slug}/{id}', [WebController::class, 'detailwisata']);
+
 Route::get('/kontak', [WebController::class, 'kontak']);
 Route::get('/hasilpencarian', [WebController::class, 'hasilpencarian']);
 
@@ -128,6 +132,20 @@ Route::post('/admin/penduduk/store',[PendudukController::class,'store']);
 Route::get('/admin/penduduk/{id}/edit',[PendudukController::class,'edit']);
 Route::put('/admin/penduduk/{id}',[PendudukController::class,'update']);
 Route::delete('/admin/penduduk/{id}/destroy',[PendudukController::class,'destroy']);
+
+Route::get('/admin/wisata',[WisataController::class,'get']);
+Route::get('/admin/wisata/create',[WisataController::class,'create']);
+Route::post('/admin/wisata/store',[WisataController::class,'store']);
+Route::get('/admin/wisata/{id}/edit',[WisataController::class,'edit']);
+Route::put('/admin/wisata/{id}',[WisataController::class,'update']);
+Route::delete('/admin/wisata/{id}/destroy',[WisataController::class,'destroy']);
+
+Route::get('/admin/gambar_wisata/{id}',[GambarWisataController::class,'get']);
+Route::get('/admin/gambar_wisata/create/{id}',[GambarWisataController::class,'create']);
+Route::post('/admin/gambar_wisata/store/{id}',[GambarWisataController::class,'store']);
+Route::get('/admin/gambar_wisata/{id}/edit',[GambarWisataController::class,'edit']);
+Route::put('/admin/gambar_wisata/{id}',[GambarWisataController::class,'update']);
+Route::delete('/admin/gambar_wisata/{id}/destroy/{persyaratan_dokumen_id}',[GambarWisataController::class,'destroy']);
 
 
 

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Beranda;
+use App\Models\GambarWisata;
 use App\Models\Layanan;
 use App\Models\Pejabat;
 use App\Models\Pengumuman;
+use App\Models\Wisata;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -56,9 +58,9 @@ class WebController extends BaseController
         return view('Web.berita',compact(['berita']));
     }
 
-    public function beritadetail($id)
+    public function beritadetail($slug)
     {
-        $berita = Berita::where("id", $id)->first();
+        $berita = Berita::where("slug", $slug)->first();
         
 
         return view('Web.detailberita',compact(['berita']));
@@ -66,12 +68,18 @@ class WebController extends BaseController
 
     public function wisata()
     {
-        return view('Web.wisata');
+        $wisata = Wisata::all();
+
+        return view('Web.wisata',compact(['wisata']));
     }
 
-    public function detailwisata()
+    public function detailwisata($slug,$id)
     {
-        return view('Web.detailwisata');
+        $wisata = Wisata::where("slug", $slug)->first();
+
+        $gambar = GambarWisata::where("tempat_wisata_id", $id)->get();
+
+        return view('Web.detailwisata',compact(['wisata','gambar']));
     }
 
 

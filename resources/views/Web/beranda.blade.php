@@ -15,7 +15,7 @@
           <p class="animated fadeIn mb-4 pb-2">
             Delisaos adalah sebuah desa pada kecamatan Muara Dua, Lhokseumawe, NAD. Telah mengimplementasikan desa digital sebagai proses pemerataan digital indonesia
           </p>
-          <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
+          <a href="/profil" class="btn btn-primary py-3 px-5 me-3 animated fadeIn"
             >Selengkapnya</a
           >
         </div>
@@ -136,7 +136,7 @@
                 <div class="property-item rounded overflow-hidden">
                   <div class="position-relative overflow-hidden">
                     <a href="/beritas/{{$w->id}}"
-                      ><img style="object-fit: cover;"  width="300px" height="170px" src="{{$w->gambar}}" alt=""
+                      ><img style="object-fit: cover;"  width="400px" height="200px" src="{{$w->gambar}}" alt=""
                     /></a>
                     <div
                       class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"

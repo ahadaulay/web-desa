@@ -30,8 +30,8 @@
               >
                 <div class="property-item rounded overflow-hidden">
                   <div class="position-relative overflow-hidden">
-                    <a href="/beritas/{{$w->id}}"
-                      ><img style="object-fit: cover;"  width="300px" height="170px" src="{{$w->gambar}}" alt=""
+                    <a href="/beritas/{{$w->slug}}"
+                      ><img style="object-fit: cover;"  width="400px" height="200px" src="{{$w->gambar}}" alt=""
                     /></a>
                     <div
                       class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"
@@ -40,7 +40,7 @@
                     </div>
                   </div>
                   <div class="p-4 pb-0">
-                    <a class="d-block h5 mb-2" href="/beritas/{{$w->id}}"
+                    <a class="d-block h5 mb-2" href="/beritas/{{$w->slug}}"
                       >{{$w->judul}}</a
                     >
                     <p>
@@ -49,7 +49,6 @@
                     </p>
                   </div>
                 </div>
-                
               </div>
               @endforeach
               {{-- card end --}}
