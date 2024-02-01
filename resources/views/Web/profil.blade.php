@@ -3,9 +3,10 @@
 @section('content')
 
 
-    <div style="height: 2000px" class="container-fluid header bg-white p-0">
-      <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-        <div class="col-md-12 p-5 mt-lg-5 md-lg-5">
+<div class="container-fluid header bg-white p-0">
+  <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+    <div class="col-md-12 p-5 mt-lg-5 md-lg-5"> 
+      <div class="container" >
           <div class="pt-lg-4" >
           <h1 class="mt-lg-5 col-6">PROFIL DESA DELISAOS</h1>
           <div class="row">
@@ -16,28 +17,30 @@
           </p>
         </div>
         </div>
+
         <div class="container text-center">
-          <h1 class="mt-lg-5">Program Unggulan</h1>
-          <div class="row mt-lg-5">
-            <div class="container col-3">
-              <img width="250px" height="250px" src="{{asset('sneat')}}/assets/img/favicon/pendidikan.png" alt="">
-              <h3>Pendidikan</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora commodi ipsum minus deserunt alias pariatur neque ad quisquam nesciunt. Aliquid, unde ab nam qui animi ea ipsa et eaque.</p>
-            </div>
+  <h1 class="mt-lg-5">Program Unggulan</h1>
+  <div class="row mt-lg-5">
+    <div class="col-md-4">
+      <img class="img-fluid" src="{{asset('sneat')}}/assets/img/favicon/pendidikan.png" alt="" width="250" height="250">
+      <h3>Pendidikan</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    </div>
 
-            <div class="container col-3">
-              <img width="250px" height="250px" src="{{asset('sneat')}}/assets/img/favicon/wisata.png" alt="">
-              <h3>Wisata</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora commodi ipsum minus deserunt alias pariatur neque ad quisquam nesciunt. Aliquid, unde ab nam qui animi ea ipsa et eaque.</p>
-            </div>
+    <div class="col-md-4">
+      <img class="img-fluid" src="{{asset('sneat')}}/assets/img/favicon/wisata.png" alt="" width="250" height="250">
+      <h3>Wisata</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    </div>
 
-            <div class="container col-3">
-              <img width="250px" height="250px" src="{{asset('sneat')}}/assets/img/favicon/pertanian.png" alt="">
-              <h3>Pertanian</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto tempora commodi ipsum minus deserunt alias pariatur neque ad quisquam nesciunt. Aliquid, unde ab nam qui animi ea ipsa et eaque.</p>
-            </div>
-          </div>
-        </div>
+    <div class="col-md-4">
+      <img class="img-fluid" src="{{asset('sneat')}}/assets/img/favicon/pertanian.png" alt="" width="250" height="250">
+      <h3>Pertanian</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    </div>
+  </div>
+</div>
+
 
         <div class="container-fluid contact py-5">
           <div class="container py-5 text-center">

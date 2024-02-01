@@ -3,9 +3,10 @@
 @section('content')
 
 
-    <div style="height: 1000px" class="container-fluid header bg-white p-0">
-      <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-        <div class="col-md-12 p-5 mt-lg-5">
+<div class="container-fluid header bg-white p-0">
+  <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+    <div class="col-md-12 p-5 mt-lg-5 md-lg-5"> 
+      <div class="container" >
           <div class="pt-lg-4" >
             <h1 class="mt-lg-5">TUGAS & FUNGSI</h1>
             <img class="col-md-3" width="250px" height="250px" src="{{asset('sneat')}}/assets/img/favicon/tugas.png" alt="">

@@ -116,7 +116,7 @@
             </li>
 
             <li class="menu-item ">
-              <a href="pejabat" class="menu-link">
+              <a href="/pejabats" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-user"></i>
                 <div data-i18n="Analytics">Pejabat</div>
               </a>
@@ -154,6 +154,13 @@
               <a href="/admin/wisata" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-landscape"></i>
                 <div data-i18n="Analytics">Wisata</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/dokumen" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-file-doc"></i>
+                <div data-i18n="Analytics">Dokumen</div>
               </a>
             </li>
 

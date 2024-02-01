@@ -25,7 +25,12 @@ class PencarianController extends BaseController
             ->orWhere('singkatan', 'like', "%{$keyword}%")
             ->get();
 
-        return view('Web.hasilpencarian',compact(['results']));
+        $dokumen = DB::table('dokumen')
+            ->where('nama', 'like', "%{$keyword}%")
+            ->orWhere('singkatan', 'like', "%{$keyword}%")
+            ->get();
+
+        return view('Web.hasilpencarian',compact(['results','dokumen']));
     }
 
     public function detailpencarian($id)

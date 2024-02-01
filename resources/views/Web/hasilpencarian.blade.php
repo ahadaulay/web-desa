@@ -18,6 +18,9 @@
               @foreach ($results as $w )
                 <li>Informasi Pendaftaran {{$w -> nama}} <a href="/detailpencarian/{{$w->id}}">Klik</a></li>
               @endforeach
+              @foreach ($dokumen as $w )
+                <li>Dokumen {{$w -> nama}} <a href="{{$w->dokumen}}">download</a></li>
+              @endforeach
             </ul>
             </div>
           </div>

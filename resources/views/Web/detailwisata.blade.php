@@ -32,12 +32,11 @@
             </div>
         </div>
           <!-- Testimonial End -->
-                <div class="container col-md-12">
-                    <div class="mt-lg-5 text-box" style="word-wrap: break-word; max-width: 700px;">
-                        {{$wisata->deskripsi}}
-                    </div>
-                </div>
-
+          <div class="container col-md-12">
+            <div class="mt-lg-5 text-box" style="word-wrap: break-word; max-width: 700px;">
+                <p class="text-dark">{!! nl2br(e($wisata->deskripsi)) !!}</p>
+            </div>
+        </div>  
         <div class="container-fluid contact py-5">
             <div class="container py-5 text-center">
               <h1>LOKASI WISATA</h1>

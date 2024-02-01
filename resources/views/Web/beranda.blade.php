@@ -135,7 +135,7 @@
               >
                 <div class="property-item rounded overflow-hidden">
                   <div class="position-relative overflow-hidden">
-                    <a href="/beritas/{{$w->id}}"
+                    <a href="/beritas/{{$w->slug}}"
                       ><img style="object-fit: cover;"  width="400px" height="200px" src="{{$w->gambar}}" alt=""
                     /></a>
                     <div
@@ -145,7 +145,7 @@
                     </div>
                   </div>
                   <div class="p-4 pb-0">
-                    <a class="d-block h5 mb-2" href="/beritas/{{$w->id}}"
+                    <a class="d-block h5 mb-2" href="/beritas/{{$w->slug}}"
                       >{{$w->judul}}</a
                     >
                     <p>
