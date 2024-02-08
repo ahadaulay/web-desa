@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Beranda;
+use App\Models\GambarWisata;
 use App\Models\Layanan;
 use App\Models\Pejabat;
 use App\Models\Pengumuman;
+use App\Models\Wisata;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -22,9 +24,11 @@ class WebController extends BaseController
         $layanan = Layanan::all();
         $pejabat = Pejabat::all();
         $pengumuman = Pengumuman::all();
+        $berita = Berita::latest()->limit(6)->get();
 
 
-        return view('Web.beranda',compact(['beranda','layanan','pejabat','pengumuman']));
+
+        return view('Web.beranda',compact(['beranda','layanan','pejabat','pengumuman','berita']));
     }
 
     public function profile()
@@ -54,19 +58,38 @@ class WebController extends BaseController
         return view('Web.berita',compact(['berita']));
     }
 
-    public function detailberita()
+    public function beritadetail($slug)
     {
-        return view('Web.detailberita');
+        $berita = Berita::where("slug", $slug)->first();
+        
+
+        return view('Web.detailberita',compact(['berita']));
     }
 
-    public function galeri()
+    public function wisata()
     {
-        return view('Web.galeri');
+        $wisata = Wisata::all();
+
+        return view('Web.wisata',compact(['wisata']));
+    }
+
+    public function detailwisata($slug,$id)
+    {
+        $wisata = Wisata::where("slug", $slug)->first();
+
+        $gambar = GambarWisata::where("tempat_wisata_id", $id)->get();
+
+        return view('Web.detailwisata',compact(['wisata','gambar']));
     }
 
 
     public function kontak()
     {
         return view('Web.kontak');
+    }
+
+    public function hasilpencarian()
+    {
+        return view('Web.hasilpencarian');
     }
 }

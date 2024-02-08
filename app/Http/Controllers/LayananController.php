@@ -51,7 +51,7 @@ class LayananController extends BaseController
         ]);
 
 
-        return redirect('/layanan')->with("success_create", "Berhasil Menambahkan Data");
+        return redirect('/layanans')->with("success_create", "Berhasil Menambahkan Data");
     }
 
     public function edit($id){ 
@@ -77,7 +77,7 @@ class LayananController extends BaseController
                 "nama" => $request->nama,
                 "deskripsi" => $request->deskripsi,
             ]);
-            return redirect('/layanan')->with("success_edit", "Berhasil Mengubah Data");
+            return redirect('/layanans')->with("success_edit", "Berhasil Mengubah Data");
         }
 
         $data_hero = Layanan::where("id", $id)->first();
@@ -92,7 +92,7 @@ class LayananController extends BaseController
             "gambar" => $image_url,
         ]);
 
-        return redirect('/layanan')->with("success_edit", "Berhasil Mengubah Data");
+        return redirect('/layanans')->with("success_edit", "Berhasil Mengubah Data");
     }
 
     public function destroy($id)
@@ -107,7 +107,7 @@ class LayananController extends BaseController
 
         Layanan::where("id", $id)->delete();
 
-        return redirect('/layanan')->with("success_delete", "Berhasil Menghapus Data");
+        return redirect('/layanans')->with("success_delete", "Berhasil Menghapus Data");
     }
 
 }

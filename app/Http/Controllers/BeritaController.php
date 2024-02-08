@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Pejabat;
 use App\Helpers\DeleteFile;
 use App\Helpers\UploadFile;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -22,7 +23,7 @@ class BeritaController extends BaseController
             return redirect("/loginIndex")->with("failed", "gagal login");
         }
 
-        $data = Berita::all();
+        $data = Berita::latest()->get();
 
 
         return view('Admin.Berita.index',compact(['data']));
@@ -45,12 +46,15 @@ class BeritaController extends BaseController
 
         $image_url =  UploadFile::upload("berita", $request->file('foto'));
 
+        $slug = Str::slug($request->judul,'-');
+
         Berita::insert([
             "kategori" => $request->kategori,
             "judul" => $request->judul,
             "tanggal" => $request->tanggal,
             "isi" => $request->isi,
-            "gambar" => $image_url, 
+            "gambar" => $image_url,
+            "slug" => $slug, 
         ]);
 
 
@@ -74,6 +78,8 @@ class BeritaController extends BaseController
         if (session()->get("remember_token") == "") {
             return redirect("/loginIndex")->with("failed", "gagal login");
         }
+
+        $slug = Str::slug($request->judul,'-');
     
         if ($request->foto == null) {
             Berita::where("id", $id)->update([
@@ -81,6 +87,7 @@ class BeritaController extends BaseController
                 "judul" => $request->judul,
                 "tanggal" => $request->tanggal,
                 "isi" => $request->isi,
+                "slug" => $slug,
             ]);
             return redirect('/admin/berita')->with("success_edit", "Berhasil Mengubah Data");
         }
@@ -96,7 +103,8 @@ class BeritaController extends BaseController
             "judul" => $request->judul,
             "tanggal" => $request->tanggal,
             "isi" => $request->isi,
-            "gambar" => $image_url, 
+            "gambar" => $image_url,
+            "slug" => $slug, 
         ]);
 
         return redirect('/admin/berita')->with("success_edit", "Berhasil Mengubah Data");

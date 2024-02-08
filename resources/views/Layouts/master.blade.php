@@ -37,6 +37,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('lepten')}}/css/style.css" rel="stylesheet" />
+
+    <style>
+        .navbar-nav .nav-link.active {
+            color: #ff0000; /* Ganti dengan warna yang diinginkan */
+            font-weight: bold;
+            /* Tambahkan gaya aktif sesuai keinginan Anda */
+        }
+    </style>
   </head>
 
   <body>
@@ -46,7 +54,7 @@
       <div class="container-fluid nav-bar bg-transparent">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
           <a
-            href="index.html"
+            href="/"
             class="navbar-brand d-flex align-items-center text-center"
           >
             <div class="icon p-2 me-2">
@@ -69,11 +77,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
-              <a href="/beranda" class="nav-item nav-link active">Beranda</a>
+              <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Beranda</a>
               <div class="nav-item dropdown">
                 <a
                   href="#"
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle {{ request()->is(['profil', 'visi-misi', 'tugas-fungsi', 'struktur-pejabat']) ? 'active' : '' }}"
                   data-bs-toggle="dropdown"
                   >Tentang</a
                 >
@@ -90,9 +98,31 @@
                   >
                 </div>
               </div>
-              <a href="/berita" class="nav-item nav-link">Berita</a>
-              <a href="/galeri" class="nav-item nav-link">Galeri</a>
-              <a href="/kontak" class="nav-item nav-link">Kontak</a>
+              <a href="/beritas" class="nav-item nav-link {{ request()->is('beritas') ? 'active' : '' }}">Berita</a>
+              <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle {{ request()->is(['data-pendidikan', 'data-profesi', 'data-agama', 'data-gender']) ? 'active' : '' }}"
+                  data-bs-toggle="dropdown"
+                  >Statistik</a
+                >
+                <div class="dropdown-menu rounded-0 m-0">
+                  <a href="/data-pendidikan" class="dropdown-item"
+                    >Data Pendidikan</a
+                  >
+                  <a href="/data-profesi" class="dropdown-item"
+                    >Data Profesi</a
+                  >
+                  <a href="/data-agama" class="dropdown-item"
+                    >Data Agama</a
+                  >
+                  <a href="/data-gender" class="dropdown-item"
+                  >Data Gender</a
+                >
+                </div>
+              </div>
+              <a href="/wisatas  " class="nav-item nav-link {{ request()->is('wisata ') ? 'active' : '' }}">WISATA</a>
+              <button type="button" class="nav-item nav-link btn text-success ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             </div>
           </div>
         </nav>
@@ -161,9 +191,18 @@
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">
-                  <a href="">Home</a>
-                  <a href="">Help</a>
-                  <a href="">FQAs</a>
+                  <img
+                  class="img-fluid"
+                  src="{{asset('lepten')}}/img/logos.png"
+                  alt="Icon"
+                  style="width: 50px; height: 50px"
+                />
+                <img
+                class="img-fluid"
+                src="{{asset('lepten')}}/img/desbimtek.png"
+                alt="Icon"
+                style="width: 50px; height: 50px"
+              />
                 </div>
               </div>
             </div>
@@ -177,6 +216,25 @@
         ><i class="bi bi-arrow-up"></i
       ></a>
     </div>
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+              <div class="modal-header border-0">
+                  <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body d-flex align-items-center justify-content-center">
+                  <form action="/pencarian" method="POST" class="input-group" style="max-width: 600px;">
+                    @csrf
+                      <input autofocus type="text" name="keyword" class="form-control text-white bg-transparent border-light p-3" placeholder="Type search keyword">
+                      <button type="submit" class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Full Screen Search End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

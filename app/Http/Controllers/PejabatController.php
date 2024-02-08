@@ -42,7 +42,7 @@ class PejabatController extends BaseController
             return redirect("/loginIndex")->with("failed", "gagal login");
         }
 
-        $image_url =  UploadFile::upload("hero", $request->file('foto'));
+        $image_url =  UploadFile::upload("pejabat", $request->file('foto'));
 
         Pejabat::insert([
             "nama" => $request->nama,

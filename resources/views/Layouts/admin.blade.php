@@ -55,6 +55,8 @@
 
     <link rel="stylesheet" href="{{asset('sneat')}}/assets/vendor/libs/apex-charts/apex-charts.css" />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -96,36 +98,69 @@
               </a>
             </li>
 
-            @if (session()->get('role') == "admin")
-            <li class="menu-item ">
-              <a href="/registerIndex" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-plus-circle"></i>
-                <div data-i18n="Analytics">Register Akun</div>
-              </a>
-            </li>
-            @endif
-
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item ">
               <a href="/heros" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crosshair"></i>
+                <i class="menu-icon tf-icons bx bx-image-alt"></i>
                 <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/layanan" class="menu-link">
+              <a href="/layanans" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">Layanan</div>
               </a>
             </li>
 
             <li class="menu-item ">
-              <a href="/pejabat" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+              <a href="/pejabats" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-user"></i>
                 <div data-i18n="Analytics">Pejabat</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/pengumuman" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-megaphone"></i>
+                <div data-i18n="Analytics">Pengumuman</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/berita" class="menu-link">  
+                <i class="menu-icon tf-icons bx bx-message-alt-dots"></i>
+                <div data-i18n="Analytics">Berita</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/persyaratan_dokumen" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-file-doc"></i>
+                <div data-i18n="Analytics">Persyaratan Dokumen</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/penduduk" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-face"></i>
+                <div data-i18n="Analytics">Penduduk</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/wisata" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-landscape"></i>
+                <div data-i18n="Analytics">Wisata</div>
+              </a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/admin/dokumen" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-file-doc"></i>
+                <div data-i18n="Analytics">Dokumen</div>
               </a>
             </li>
 
@@ -202,5 +237,15 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      let table = new DataTable('#myTable', {
+    responsive: true
+});
+    </script>
   </body>
 </html>
