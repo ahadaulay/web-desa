@@ -11,8 +11,7 @@ Desa Program Desbimtek is a web application designed to facilitate the managemen
 - **User Roles**: Multiple user roles including admin, user, and program manager with different access levels.
 - **Data Visualization**: Visual representation of program progress and outcomes.
 - **Reporting**: Generate reports on program activities, budget usage, and more.
-- **Notifications**: Keep users informed about important updates and deadlines.
-- **Multi-language Support**: Available in multiple languages to cater to diverse communities.
+- **Searching**: USers can search anything about desa.
 
 ## Installation
 
